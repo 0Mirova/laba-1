@@ -1,0 +1,24 @@
+program TruncatedConeCharacteristics;
+
+var
+  r, R, h, V, S, Sl: Real;
+
+begin
+  Write('Enter the upper radius (r) of the truncated cone: ');
+  ReadLn(r);
+  
+  Write('Enter the lower radius (R) of the truncated cone: ');
+  ReadLn(R);
+  
+  Write('Enter the height (h) of the truncated cone: ');
+  ReadLn(h);
+  
+  V := Pi * h / 3 * (r * r + R * R + r * R);
+  S := Pi * (r + R) * Sqrt((R - r) * (R - r) + h * h);
+  Sl := Pi * (r + R) * Sqrt((R - r) * (R - r) + h * h) + Pi * (r * r + R * R);
+  
+  WriteLn('Volume (V) of the truncated cone: ', Format('%0.5f', [V]));
+  WriteLn('Total surface area (S) of the truncated cone: ', Format('%0.5f', [Sl]));
+  WriteLn('Lateral surface area (S) of the truncated cone: ', Format('%0.5f', [S]));
+  
+end.
